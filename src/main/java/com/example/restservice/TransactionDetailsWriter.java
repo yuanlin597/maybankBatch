@@ -1,5 +1,10 @@
 package com.example.restservice;
 
+import com.example.restservice.entity.Customer;
+import com.example.restservice.entity.Transaction;
+import com.example.restservice.entity.TransactionDetails;
+import com.example.restservice.repository.CustomerRepository;
+import com.example.restservice.repository.TransactionRepository;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -22,7 +27,7 @@ public class TransactionDetailsWriter implements ItemWriter<TransactionDetails> 
             customerRepository.save(customer);
 
             Transaction transaction = new Transaction();
-//            transaction.setAccountNumber(transactionDetails.getAccountNumber());
+            transaction.setAccountNumber(transactionDetails.getAccountNumber());
             transaction.setTrxAmount(transactionDetails.getTrxAmount());
             transaction.setDescription(transactionDetails.getDescription());
             transaction.setTrxDate(transactionDetails.getTrxDateTime());

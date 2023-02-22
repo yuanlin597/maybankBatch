@@ -1,5 +1,6 @@
 package com.example.restservice;
 
+import com.example.restservice.entity.TransactionDetails;
 import org.springframework.batch.item.ItemProcessor;
 
 import java.math.BigDecimal;
