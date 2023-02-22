@@ -5,6 +5,7 @@ import com.example.restservice.entity.TransactionDetails;
 import com.example.restservice.repository.CustomerRepository;
 import com.example.restservice.repository.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -25,8 +26,8 @@ public class TransactionDetailsService {
         return transactionRepository.findAll();
     }
 
-    public List<TransactionDetails> findAllTransactionWithCustomer(){
-        return transactionRepository.findAllTransaction();
+    public List<TransactionDetails> findAllTransactionWithCustomer(Pageable pageable){
+        return transactionRepository.findAllTransaction(pageable);
     }
 
     public void updateTransactionDetails(Transaction transaction){
@@ -35,6 +36,18 @@ public class TransactionDetailsService {
 
     public Optional<Transaction> getTransactionById(Long id){
         return transactionRepository.findById(id);
+    }
+
+    public List<TransactionDetails> findTransactionByAccountNumber(Long accountNumber, Pageable pageable){
+        return transactionRepository.findTransactionByAccountNumber(accountNumber, pageable);
+    }
+
+    public List<TransactionDetails> findTransactionByCustomerId(Long customerId, Pageable pageable){
+        return transactionRepository.findTransactionByCustomerId(customerId, pageable);
+    }
+
+    public List<TransactionDetails> findTransactionByDescription(String description, Pageable pageable){
+        return transactionRepository.findTransactionByDescription(description, pageable);
     }
 
 

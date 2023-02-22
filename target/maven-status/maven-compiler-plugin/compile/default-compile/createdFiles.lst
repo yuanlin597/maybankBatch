@@ -1,7 +1,6 @@
 com\example\restservice\entity\TransactionDetails.class
 com\example\restservice\TransactionDetailsProcessor.class
 com\example\restservice\TransactionDetailsWriter.class
-com\example\restservice\dao\TransactionDao.class
 com\example\restservice\controller\BatchjobController.class
 com\example\restservice\entity\Customer.class
 com\example\restservice\entity\Transaction.class
