@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -28,9 +29,14 @@ public class TransactionDetailsService {
         return transactionRepository.findAllTransaction();
     }
 
-//    public void updateTransactionDetails(){
-//        transactionRepository.update
-//    }
+    public void updateTransactionDetails(Transaction transaction){
+        transactionRepository.updateTransaction(transaction.getId(), transaction.getAccountNumber(), transaction.getTrxAmount(), transaction.getDescription(), transaction.getTrxDate());
+    }
+
+    public Optional<Transaction> getTransactionById(Long id){
+        return transactionRepository.findById(id);
+    }
+
 
 
 }

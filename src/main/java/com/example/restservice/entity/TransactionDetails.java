@@ -5,6 +5,8 @@ import java.util.Date;
 
 public class TransactionDetails {
 
+    private Long transactionId;
+
     private Long accountNumber;
 
     private BigDecimal trxAmount;
@@ -32,12 +34,21 @@ public class TransactionDetails {
         this.trxDateTime = trxDateTime;
     }
 
-    public TransactionDetails(Long accountNumber, BigDecimal trxAmount, String description, Long customerId, Date trxDateTime) {
+    public TransactionDetails(Long transactionId, Long accountNumber, BigDecimal trxAmount, String description, Long customerId, Date trxDateTime) {
+        this.transactionId = transactionId;
         this.accountNumber = accountNumber;
         this.trxAmount = trxAmount;
         this.description = description;
         this.customerId = customerId;
         this.trxDateTime = trxDateTime;
+    }
+
+    public Long getTransactionId() {
+        return transactionId;
+    }
+
+    public void setTransactionId(Long transactionId) {
+        this.transactionId = transactionId;
     }
 
     public Long getAccountNumber() {
