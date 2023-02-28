@@ -2,11 +2,12 @@ com\example\restservice\entity\TransactionDetails.class
 com\example\restservice\TransactionDetailsProcessor.class
 com\example\restservice\TransactionDetailsWriter.class
 com\example\restservice\controller\BatchjobController.class
+com\example\restservice\config\BatchJobConfig.class
+com\example\restservice\config\BatchJobConfig$1.class
 com\example\restservice\entity\Customer.class
 com\example\restservice\entity\Transaction.class
+com\example\restservice\config\SecurityConfig.class
 com\example\restservice\RestServiceApplication.class
-com\example\restservice\BatchJobConfig.class
 com\example\restservice\repository\CustomerRepository.class
 com\example\restservice\repository\TransactionRepository.class
-com\example\restservice\BatchJobConfig$1.class
 com\example\restservice\service\TransactionDetailsService.class
