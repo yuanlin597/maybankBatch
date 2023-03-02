@@ -3,6 +3,7 @@ package com.example.restservice.repository;
 import com.example.restservice.entity.Transaction;
 import com.example.restservice.entity.TransactionDetails;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

@@ -7,6 +7,7 @@ import com.example.restservice.service.TransactionDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -60,9 +61,10 @@ public class BatchjobController {
     }
 
     @RequestMapping(value = "/findAllTransactionByDescription", method = RequestMethod.GET)
-    public List<TransactionDetails> findAllTransactionByDescription(@RequestParam(name = "page") Integer page, @RequestParam(name = "size") Integer size, @RequestParam(name = "description") String description){
-        Pageable pageable = PageRequest.of(page-1, size);
+    public List<TransactionDetails> findAllTransactionByDescription(@RequestParam(name = "page") Integer page, @RequestParam(name = "size") Integer size, @RequestParam(name = "description") String description, @RequestParam(name="sortBy") String sortBy, @RequestParam(name="order") String order){
+        Pageable pageable = PageRequest.of(page-1, size).withSort(Sort.by(Sort.Direction.fromString(order), sortBy));
         String descriptionFormatted = description.toUpperCase();
+
         return transactionDetailsService.findTransactionByDescription(descriptionFormatted, pageable);
     }
 
